@@ -15,6 +15,6 @@ public class TopRightArea extends FireArea
      */
     public TopRightArea()
     {    
-        
+      addObject(new FireOrb(), 250, 250);
     }
 }

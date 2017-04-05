@@ -14,6 +14,7 @@ public class ButtonLeftArea extends DesertArea
      * 
      */
     public ButtonLeftArea()
-    {    
+    {
+        addObject(new DesertOrb(), 250, 250);
     }
 }

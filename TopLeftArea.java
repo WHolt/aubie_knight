@@ -14,6 +14,7 @@ public class TopLeftArea extends WaterArea
      * 
      */
     public TopLeftArea()
-    {    
+    {
+        addObject(new WaterOrb(), 250, 250);
     }
 }

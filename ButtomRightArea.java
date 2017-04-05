@@ -14,6 +14,7 @@ public class ButtomRightArea extends IceArea
      * 
      */
     public ButtomRightArea()
-    {    
+    {
+        addObject(new IceOrb(), 250, 250);
     }
 }
