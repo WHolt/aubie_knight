@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class FireSlime extends Actor
+public class FireSlime extends Slime
 {
     /**
      * Act - do whatever the FireSlime wants to do. This method is called whenever

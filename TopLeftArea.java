@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class TopLeftArea extends World
+public class TopLeftArea extends WaterArea
 {
 
     /**
@@ -15,8 +15,5 @@ public class TopLeftArea extends World
      */
     public TopLeftArea()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(500, 500, 1);
-        addObject(new WaterSlime(), 165, 155);
     }
 }

@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class ButtonLeftArea extends World
+public class ButtonLeftArea extends DesertArea
 {
 
     /**
@@ -15,8 +15,5 @@ public class ButtonLeftArea extends World
      */
     public ButtonLeftArea()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(500, 500, 1);
-        addObject(new DesertSlime(), 165, 155);
     }
 }

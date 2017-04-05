@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class ButtomArea extends World
+public class ButtomArea extends IceArea
 {
 
     /**
@@ -15,7 +15,6 @@ public class ButtomArea extends World
      */
     public ButtomArea()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(500, 500, 1); 
+       
     }
 }
