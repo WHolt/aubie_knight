@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.*;
 /**
  * Write a description of class Overworld here.
  * 
@@ -8,7 +8,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Overworld extends World
 {
-
+    public List<Area> areas = new ArrayList<Area>(9);
+    public Area currentArea;
+    public int currentAreaIndex;
+    final int TOP_LEFT = 0;
+    final int TOP = 1;
+    final int TOP_RIGHT = 2;
+    final int LEFT = 3;
+    final int CENTER = 4;
+    final int RIGHT = 5;
+    final int BOTTOM_LEFT = 6;
+    final int BOTTOM = 7;
+    final int BOTTOM_RIGHT = 8;
     /**
      * Constructor for objects of class Overworld.
      * 
@@ -16,6 +27,62 @@ public class Overworld extends World
     public Overworld()
     {    
         // Create a new world with 500x500 cells with a cell size of 1x1 pixels.
-        super(500, 500, 1); 
+        super(500, 500, 1);
+       areas.set(TOP_LEFT, new Area("LavaArea.png"));
+       areas.set(TOP, new Area("LavaTransition.png"));
+       areas.set(TOP_RIGHT, new Area("WaterArea.png"));
+       areas.set(LEFT, new Area("DesertTransition.png"));
+       areas.set(CENTER, new Area("BeginningArea.png"));
+       areas.set(RIGHT, new Area("WaterTransition.png"));
+       areas.set(BOTTOM_LEFT, new Area("DesertArea.png"));
+       areas.set(BOTTOM, new Area("IceTransition.png"));
+       areas.set(BOTTOM_RIGHT, new Area("IceArea.png"));
+       currentArea = areas.get(CENTER);
+       currentAreaIndex = CENTER;
+    }
+    public Area getAdjacentArea(char direction) {
+        // Do valid cases for all areas //
+     switch(currentAreaIndex) {
+      case TOP_LEFT:
+      if (direction == 'r') {
+            return areas.get(TOP);
+        }
+      else if (direction == 'd') {
+            return areas.get(LEFT);
+        }
+        break;
+      case TOP:
+     
+        break;
+      case TOP_RIGHT:
+      
+        break;
+      case LEFT:
+      
+        break;
+      case CENTER:
+      
+        break;
+      case RIGHT:
+      
+        break;
+      case BOTTOM_LEFT:
+      
+        break;
+      case BOTTOM:
+      
+        break;
+      case BOTTOM_RIGHT:
+      
+        break;
+      }
+      return currentArea;
+    }
+    public void setCurrentArea(int area) {
+        currentArea = areas.get(area);
+        currentAreaIndex = area;
+    }
+    public Area getCurrentArea() {
+     return currentArea;
     }
 }

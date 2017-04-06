@@ -8,8 +8,6 @@ import java.util.*;
  */
 public class IceOrb extends Orb
 {
-    public int hitRadius = 10;
-    public int followHero = 0;
     /**
      * Act - do whatever the IceOrb wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -21,25 +19,12 @@ public class IceOrb extends Orb
          /* Reappear below Hero 
             Follow Hero at 10 pixels away
             */
-         setLocation(250,275);
+         setLocation(250,280);
          followHero = 1;
       }
       if (followHero == 1) {
         Move();
       }
     }
-    public void Move() { 
-        if(Greenfoot.isKeyDown("up")) {
-         setLocation(getX(), getY()-2);
-        }
-        else if(Greenfoot.isKeyDown("right")) {
-         move(2);
-        }
-         else if(Greenfoot.isKeyDown("left")) {
-         move(-2);
-        }
-        else if(Greenfoot.isKeyDown("down")) {
-         setLocation(getX(), getY()+2);
-        }
-    }
+   
 }

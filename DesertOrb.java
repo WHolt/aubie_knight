@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.*;
 /**
  * Write a description of class DesertOrb here.
  * 
@@ -14,6 +14,16 @@ public class DesertOrb extends Orb
      */
     public void act() 
     {
-        // Add your action code here.
+        List<Hero> actorsInRange = getObjectsInRange(hitRadius, Hero.class);
+      if (!actorsInRange.isEmpty()) {
+         /* Reappear below Hero 
+            Follow Hero at 10 pixels away
+            */
+         setLocation(250,220);
+         followHero = 1;
+      }
+      if (followHero == 1) {
+        Move();
+      }
     }    
 }

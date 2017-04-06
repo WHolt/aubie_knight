@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.*;
 /**
  * Write a description of class Hero here.
  * 
@@ -8,15 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Hero extends Actor
 {
-    /**
-     * Act - do whatever the Hero wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
-    {
-        walk(); //Add sound effects.
-        transition();
-    }
     private int wander = 0;
     private int wanderU = 0;
     private int wanderD = 0;
@@ -34,6 +25,17 @@ public class Hero extends Actor
     GreenfootImage Ai = new GreenfootImage("Ai.png");
     GreenfootImage Li = new GreenfootImage("Li.png");
     GreenfootImage Ri = new GreenfootImage("Ri.png");
+    // public List<Orb> Orbs = new ArrayList<Orb>(4); //
+    Orb orb = new Orb();
+    /**
+     * Act - do whatever the Hero wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public void act() 
+    {
+        walk(); //Add sound effects.
+        transition();
+    }
     public void walk(){ 
        if(Greenfoot.isKeyDown("up")) {
           setImage(A1);
