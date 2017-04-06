@@ -16,7 +16,7 @@ public class IceSlime extends Slime
     {
         Move();
         Kill();
-        GreenfootImage S1 = new GreenfootImage("S1.png");
-        setImage(S1);
+        /* GreenfootImage S1 = new GreenfootImage("S1.png");
+        setImage(S1); */
     }
 }

@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.*;
 /**
  * Write a description of class Hero here.
  * 
@@ -8,15 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Hero extends Actor
 {
-    /**
-     * Act - do whatever the Hero wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
-    {
-        walk(); //Add sound effects.
-        transition();
-    }
     private int wander = 0;
     private int wanderU = 0;
     private int wanderD = 0;
@@ -34,6 +25,45 @@ public class Hero extends Actor
     GreenfootImage Ai = new GreenfootImage("Ai.png");
     GreenfootImage Li = new GreenfootImage("Li.png");
     GreenfootImage Ri = new GreenfootImage("Ri.png");
+    public int W1 = 0;
+    public int W2 = 0;
+    public int W3 = 0;
+    public int W4 = 0;
+    public int W5 = 1;
+    public int W6 = 0;
+    public int W7 = 0;
+    public int W8 = 0;
+    public int W9 = 0;
+    public int orbHeld = 0;
+    public int hitRadius = 30; 
+    GreenfootSound oW = new GreenfootSound("Lumian.mp3");
+    public int vol = oW.getVolume();
+    /**
+     * Act - do whatever the Hero wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public void act() 
+    {
+        walk(); //Add sound effects.
+        transition();
+        orbCollect();
+        oW.play();
+        if (orbHeld == 0) {
+         oW.setVolume(15);
+        }
+        if (orbHeld == 1) {
+         oW.setVolume(30);
+        }
+        if (orbHeld == 2) {
+            oW.setVolume(45);
+        }
+        if (orbHeld == 3) {
+         oW.setVolume(60);
+        }
+        if (orbHeld == 4) {
+            oW.setVolume(75);
+        }
+    }
     public void walk(){ 
        if(Greenfoot.isKeyDown("up")) {
           setImage(A1);
@@ -116,15 +146,6 @@ public class Hero extends Actor
             setImage(Li);
         }
     }
-    public int W1 = 0;
-    public int W2 = 0;
-    public int W3 = 0;
-    public int W4 = 0;
-    public int W5 = 1;
-    public int W6 = 0;
-    public int W7 = 0;
-    public int W8 = 0;
-    public int W9 = 0;
     public void transition() {
       int  X = getX();
       int Y = getY();
@@ -361,4 +382,19 @@ public class Hero extends Actor
         }
       }
     }
+    public void orbCollect() {
+    List<Orb> actorsInRange = getObjectsInRange(hitRadius, Orb.class);
+    if (!actorsInRange.isEmpty()) {
+          removeTouching(Orb.class);
+          orbHeld += 1;
+        }
+    if(orbHeld == 4) {
+     List<Boss> bossInRange = getObjectsInRange(hitRadius, Boss.class);
+     if (!bossInRange.isEmpty()) {
+          removeTouching(Boss.class);
+          // You Win Sprite//
+          Greenfoot.stop();
+        }
+    }
    }
+}

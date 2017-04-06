@@ -14,6 +14,12 @@ public class Boss extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
+        walk();
     }    
+    public void walk() {
+      move(Greenfoot.getRandomNumber(50));
+      if(isAtEdge()) {
+        move(-500);
+        }
+    }
 }

@@ -16,8 +16,8 @@ public class WaterSlime extends Slime
     {
         Move();
         Kill();
-        GreenfootImage S1 = new GreenfootImage("S2.png");
-        setImage(S1);
+        /* GreenfootImage S1 = new GreenfootImage("S2.png");
+        setImage(S1); */
     }
     public void Kill()
     {
