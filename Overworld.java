@@ -52,28 +52,86 @@ public class Overworld extends World
         }
         break;
       case TOP:
-     
+      if (direction == 'r') {
+          return areas.get(TOP_RIGHT);
+        }
+      else if(direction == 'l') {
+          return areas.get(TOP_LEFT);
+        }
+      else if (direction == 'd') {
+            return areas.get(CENTER);
+        }
         break;
       case TOP_RIGHT:
-      
+      if (direction == 'l') {
+            return areas.get(TOP);
+        }
+      else if (direction == 'd') {
+            return areas.get(RIGHT);
+        }
         break;
       case LEFT:
-      
+      if (direction == 'r') {
+          return areas.get(CENTER);
+        }
+      else if(direction == 'u') {
+          return areas.get(TOP_LEFT);
+        }
+      else if (direction == 'd') {
+            return areas.get(BOTTOM_LEFT);
+        }
         break;
       case CENTER:
-      
+      if (direction == 'r') {
+          return areas.get(RIGHT);
+        }
+      else if (direction == 'l') {
+          return areas.get(LEFT);
+        }
+      else if (direction == 'd') {
+            return areas.get(BOTTOM);
+        }
+      else if (direction == 'u') {
+          return areas.get(TOP);
+        }
         break;
       case RIGHT:
-      
+      if (direction == 'l') {
+          return areas.get(CENTER);
+        }
+      else if(direction == 'u') {
+          return areas.get(TOP_RIGHT);
+        }
+      else if (direction == 'd') {
+            return areas.get(BOTTOM_RIGHT);
+        }
         break;
       case BOTTOM_LEFT:
-      
+      if(direction == 'u') {
+          return areas.get(LEFT);
+        }
+      else if (direction == 'd') {
+            return areas.get(BOTTOM);
+        }
         break;
       case BOTTOM:
-      
+      if (direction == 'u') {
+          return areas.get(CENTER);
+        }
+      else if(direction == 'l') {
+          return areas.get(BOTTOM_LEFT);
+        }
+      else if (direction == 'r') {
+            return areas.get(BOTTOM_RIGHT);
+        }
         break;
       case BOTTOM_RIGHT:
-      
+      if (direction == 'u') {
+          return areas.get(RIGHT);
+        }
+      else if(direction == 'l') {
+          return areas.get(BOTTOM);
+        }
         break;
       }
       return currentArea;
