@@ -6,16 +6,26 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Area extends World
+public class Area
 {
-
+    final int height = 500;
+    final int width = 500;
+    GreenfootImage bgImage;
     /**
      * Constructor for objects of class Area.
      * 
      */
     public Area(String backgroundImage)
     {    
-        super(500, 500, 1);
-        setBackground(backgroundImage);
+       bgImage = new GreenfootImage(backgroundImage);
+    }
+    public int getHeight() {
+      return height;
+    }
+    public int getWidth() {
+     return width;
+    }
+    public GreenfootImage getBackground() {
+        return bgImage;
     }
 }
