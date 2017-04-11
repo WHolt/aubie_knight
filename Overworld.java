@@ -16,6 +16,6 @@ public class Overworld extends World
     public Overworld()
     {    
         // Create a new world with 500x500 cells with a cell size of 1x1 pixels.
-        super(500, 500, 1); 
+        super(500, 500, 1);
     }
 }

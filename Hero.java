@@ -37,7 +37,6 @@ public class Hero extends Actor
     public int orbHeld = 0;
     public int hitRadius = 30; 
     GreenfootSound oW = new GreenfootSound("Lumian.mp3");
-    public int vol = oW.getVolume();
     /**
      * Act - do whatever the Hero wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

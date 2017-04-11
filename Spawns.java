@@ -15,7 +15,7 @@ public class Spawns extends Overworld
      */
     public Spawns()
     {
-      setPaintOrder(TreeTop.class, Tree.class, Hero.class, Tree2.class);
+      setPaintOrder(TreeTop.class, Tree.class, Hero.class, Boss.class, Tree2.class);
       //BottomLeft//
       addObject(new Tree(), 150, 301);
       addObject(new Tree(), 150, 351);
