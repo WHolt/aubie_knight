@@ -180,6 +180,7 @@ public class Overworld extends World
     }
     public void setCurrentWorld(int area) {
         this.setBackground(areas.get(area));
+        currentAreaIndex = area;
         Greenfoot.setWorld(this);
     }
   
