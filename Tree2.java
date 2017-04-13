@@ -14,6 +14,6 @@ public class Tree2 extends Actor
      */
     public void act() 
     {
-        //Background trees.
+        // Add your action code here.
     }    
 }

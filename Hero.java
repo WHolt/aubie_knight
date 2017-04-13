@@ -35,7 +35,8 @@ public class Hero extends Actor
     public int W8 = 0;
     public int W9 = 0;
     public int orbHeld = 0;
-    public int hitRadius = 30; 
+    public int hitRadius = 30;
+    public int hitRadius2 = 50;
     GreenfootSound oW = new GreenfootSound("Lumian.mp3");
     /**
      * Act - do whatever the Hero wants to do. This method is called whenever
@@ -46,21 +47,24 @@ public class Hero extends Actor
         walk(); //Add sound effects.
         transition();
         orbCollect();
-        oW.play();
+        music();
+    }
+    public void music() {
+        oW.play(); 
         if (orbHeld == 0) {
-         oW.setVolume(15);
+          oW.setVolume(15);
         }
         if (orbHeld == 1) {
-         oW.setVolume(30);
+          oW.setVolume(20);
         }
         if (orbHeld == 2) {
-            oW.setVolume(45);
+           oW.setVolume(30);
         }
         if (orbHeld == 3) {
-         oW.setVolume(60);
+            oW.setVolume(40);
         }
         if (orbHeld == 4) {
-            oW.setVolume(75);
+            oW.setVolume(50);
         }
     }
     public void walk(){ 
@@ -388,7 +392,7 @@ public class Hero extends Actor
           orbHeld += 1;
         }
     if(orbHeld == 4) {
-     List<Boss> bossInRange = getObjectsInRange(hitRadius, Boss.class);
+     List<Boss> bossInRange = getObjectsInRange(hitRadius2, Boss.class);
      if (!bossInRange.isEmpty()) {
           removeTouching(Boss.class);
           // You Win Sprite//
